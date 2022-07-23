@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import classes from './event-item.module.css';
 
 const EventItem = (props) => {
     const {title, image, date, location, id} = props;
@@ -11,7 +12,7 @@ const EventItem = (props) => {
     const exploreLink = `/events/${id}`;
 
     return (
-        <li>
+        <li className={classes.item}>
             <div>
                 <img src={'/'+ image } alt={title} />
                 <div>
@@ -25,7 +26,7 @@ const EventItem = (props) => {
 
                 </div>
                 <div>
-                    <Link href="/">Explore Event</Link>
+                    <Link href={exploreLink}>Explore Event</Link>
                 </div>
             </div>
         </li>
